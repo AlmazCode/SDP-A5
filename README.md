@@ -145,11 +145,10 @@ three strategy classes and moved construction choices into the selector.
 The context API and **the entire `PlayerStrategyTest.java` file are identical** on both commits.
 All 42 tests present at that stage pass before and after the refactor.
 
-- [Before: conditional algorithms, `ebfded4`](https://github.com/AlmazCode/SDP-A4/commit/ebfded42276c855ed7cb6cb623ed048ae08d482e)
-- [After: extracted strategies, `bfb4c78`](https://github.com/AlmazCode/SDP-A4/commit/bfb4c782c1d61c1c203c66eb49e4489c6f464458)
+- [Before: conditional algorithms, `ebfded4`](https://github.com/AlmazCode/SDP-A5/commit/ebfded42276c855ed7cb6cb623ed048ae08d482e)
+- [After: extracted strategies, `bfb4c78`](https://github.com/AlmazCode/SDP-A5/commit/bfb4c782c1d61c1c203c66eb49e4489c6f464458)
 
-These are local commits. The links use the configured `origin` repository and become accessible
-on GitHub after the commits are pushed there.
+Both refactoring commits are preserved in this standalone Assignment 5 repository.
 
 Inspect the refactoring locally:
 

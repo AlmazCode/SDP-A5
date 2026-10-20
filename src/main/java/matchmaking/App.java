@@ -37,8 +37,11 @@ public class App {
                             case "n" -> false;
                             default -> throw new MatchmakingException("Enter y or n");
                         };
-                        int pause = integer(input, out, "Pause: 0 full run, 1 after A, 2 after B: ");
-                        show(matchmaking.startMatch(first, second, latency, cheater, pause), out);
+                        int pause = integer(input, out, "Pause: 0 full run, 1 after A, 2 after B, 3 Run A and B without C: ");
+                        if (pause < 3)
+                            show(matchmaking.startMatch(first, second, latency, cheater, pause), out);
+                        else
+                            show(matchmaking.startMatchAB(first, second, latency, cheater), out);
                     }
                     case "2" -> out.print(admin.inspect());
                     case "3", "4" -> {

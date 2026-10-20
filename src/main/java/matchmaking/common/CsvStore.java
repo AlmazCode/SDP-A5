@@ -8,7 +8,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.List;
 
-// Each file stores one CSV record.
 public class CsvStore {
     private final Path root;
 

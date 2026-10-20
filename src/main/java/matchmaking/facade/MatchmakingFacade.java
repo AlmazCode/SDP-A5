@@ -26,13 +26,19 @@ public class MatchmakingFacade {
         confirmation = new SessionService(sessions, new AntiCheatScanner());
     }
 
-    // pauseAfter: 0 = whole chain, 1 = stop after A, 2 = stop after B.
     public MatchChain startMatch(int rating1, int rating2, int latency, boolean cheater, int pauseAfter) {
         if (pauseAfter < 0 || pauseAfter > 2) throw new MatchmakingException("Pause must be 0, 1 or 2");
         MatchChain match = new MatchChain(UUID.randomUUID().toString(), rating1, rating2,
                 latency, cheater, MatchChain.Stage.PENDING_A, "", "");
         chains.save(match);
         return advance(match.id(), pauseAfter);
+    }
+
+    public MatchChain startMatchAB(int rating1, int rating2, int latency, boolean cheater) {
+        MatchChain match = new MatchChain(UUID.randomUUID().toString(), rating1, rating2,
+                latency, cheater, MatchChain.Stage.PENDING_A, "", "");
+        chains.save(match);
+        return advance(match.id(), 2);
     }
 
     public MatchChain resume(String id) { return advance(id, 0); }
@@ -42,7 +48,6 @@ public class MatchmakingFacade {
         if (match.stage() == MatchChain.Stage.COMPLETED || match.stage() == MatchChain.Stage.COMPENSATED) return match;
         if (match.stage() == MatchChain.Stage.COMPENSATING) return compensate(id);
         try {
-            // Each service reuses a step already saved under this ID.
             formation.reserve(id, match.rating1(), match.rating2());
             match = match.withStage(MatchChain.Stage.PENDING_B);
             chains.save(match);
@@ -73,7 +78,6 @@ public class MatchmakingFacade {
             match = match.withFailure("Cancelled by administrator");
             chains.save(match);
         }
-        // Check the saved records. Undo B before A.
         ServerAllocation allocation = allocations.find(id);
         if (allocation != null && allocation.status() == ServerAllocation.Status.ALLOCATED) servers.release(id);
         if (allocation != null && allocation.status() != ServerAllocation.Status.NEW && !match.rollback().contains("B")) {
