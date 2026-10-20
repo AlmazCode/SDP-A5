@@ -4,7 +4,11 @@ public class PlayerStrategySelector {
     public enum Mode { SKILL, WAITING, ROLE }
 
     public PlayerMatchingStrategy manual(Mode mode) {
-        return new ConditionalPlayerMatching(mode);
+        return switch (mode) {
+            case SKILL -> new SkillBasedMatching();
+            case WAITING -> new LongestWaitingMatching();
+            case ROLE -> new ComplementaryRoleMatching();
+        };
     }
 
     public PlayerMatchingStrategy automatic(boolean ranked, int waitingSeconds, boolean teamMode) {
