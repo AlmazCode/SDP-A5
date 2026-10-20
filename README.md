@@ -1,6 +1,193 @@
 # Video Game Matchmaking
 
-Assignment 4: Facade. Java 17+, Maven, CSV files.
+Assignment 5: Strategy, built on Assignment 4: Facade. Java 17+, Maven, JUnit 5, CSV files.
+
+## Assignment 5: run
+
+```sh
+./run-strategy.sh
+```
+
+After building, the equivalent command is:
+
+```sh
+java -cp target/matchmaking-1.0.jar matchmaking.strategy.StrategyDemo
+```
+
+An optional first argument sets the storage directory. The default is `data-strategy/`.
+The original Assignment 4 console menu remains available with `./run.sh`.
+
+The demo prints the same candidate pools for all six algorithms, demonstrates manual selection,
+changes strategies on existing contexts with `setStrategy()`, then selects automatically.
+The selected player ratings plus server latency go into `MatchmakingFacade.startMatch()`.
+The facade reserves the party, allocates the server, confirms the session, then saves its CSV records.
+Its existing schema stores ratings plus latency; candidate IDs appear in the demo output.
+
+## Assignment 5: two strategy families
+
+**Player matching:** every algorithm excludes the seeker and candidates whose rating gap exceeds 300.
+
+| Strategy | Algorithm | Demo result |
+| --- | --- | --- |
+| `SkillBasedMatching` | Minimize the absolute rating gap. | `close` |
+| `LongestWaitingMatching` | Maximize the candidate's waiting time. | `waiting` |
+| `ComplementaryRoleMatching` | Prefer a different role, then minimize the rating gap. | `support` |
+
+**Server selection:** every algorithm excludes servers with latency above 100 ms.
+
+| Strategy | Algorithm | Demo result |
+| --- | --- | --- |
+| `LowLatencyServer` | Minimize latency. | `fast` |
+| `LeastLoadedServer` | Read utilization from an injected source; minimize load below 100%. | `free` |
+| `RegionalServer` | Prefer the requested region, then minimize latency. | `local` |
+
+These algorithms select a domain entity; they do not implement sorting algorithms.
+The role strategy falls back to the closest rating when no complementary role exists.
+The regional strategy falls back to the lowest latency when no local server exists.
+Equal scores keep the first candidate in input order. No suitable candidate produces `Optional.empty()`.
+Inputs are immutable snapshots. Invalid ratings, negative measurements, blank identifiers,
+out-of-range percentages and null strategies are rejected.
+
+### Selectors
+
+Rules are evaluated from top to bottom:
+
+| Selector | Situation | Strategy |
+| --- | --- | --- |
+| `PlayerStrategySelector` | Ranked match | Skill |
+| `PlayerStrategySelector` | Casual match; seeker waited at least 120 seconds | Longest waiting |
+| `PlayerStrategySelector` | Casual team match; shorter wait | Complementary role |
+| `PlayerStrategySelector` | Remaining situations | Skill |
+| `ServerStrategySelector` | Competitive match | Low latency |
+| `ServerStrategySelector` | Noncompetitive match; demand at least 80% | Least loaded |
+| `ServerStrategySelector` | Remaining situations | Regional |
+
+`manual(Mode)` makes an explicit choice; `automatic(...)` chooses from the situation.
+Only selectors branch on which algorithm to construct. Contexts hold an interface reference,
+accept it in their constructor, replace it through `setStrategy()`, then delegate `select()`.
+Domain validation and comparisons inside algorithms do not choose a strategy type.
+
+### Isolation from external data
+
+`LeastLoadedServer` depends on our `ServerLoadSource` interface.
+`SimulatedServerLoadSource` supplies a fixed snapshot; an unknown server is treated as full.
+Tests also inject fake lambdas with fixed values. A real monitoring adapter can implement the
+same interface without changing the strategy or context.
+
+Each selection reads every eligible server once, so a changing sensor cannot return
+contradictory values during repeated comparisons. The next selection obtains fresh readings.
+The load strategy excludes full servers and rejects measurements outside 0–100%.
+Latency and regional policies do not consult utilization; their eligibility contract is latency only.
+
+### Class responsibilities
+
+Assignment 5 production types, including interfaces and records:
+
+| Type | Responsibility |
+| --- | --- |
+| `Player` | Stores a validated queued player's attributes. |
+| `PlayerPool` | Exposes eligible player candidates from an immutable snapshot. |
+| `PlayerMatchingStrategy` | Defines the player selection contract. |
+| `PlayerMatchingContext` | Delegates player selection to its replaceable strategy. |
+| `SkillBasedMatching` | Selects the eligible player with the smallest rating gap. |
+| `LongestWaitingMatching` | Selects the eligible player with the longest waiting time. |
+| `ComplementaryRoleMatching` | Selects a complementary role with rating proximity as the secondary criterion. |
+| `PlayerStrategySelector` | Chooses the player matching policy. |
+| `PlayerStrategySelector.Mode` | Names the built-in manual player policies. |
+| `ServerCandidate` | Stores a validated server candidate's attributes. |
+| `ServerPool` | Exposes eligible server candidates from an immutable snapshot. |
+| `ServerSelectionStrategy` | Defines the server selection contract. |
+| `ServerSelectionContext` | Delegates server selection to its replaceable strategy. |
+| `LowLatencyServer` | Selects the eligible server with the lowest latency. |
+| `LeastLoadedServer` | Selects the least utilized eligible server using injected measurements. |
+| `RegionalServer` | Selects a preferred region with latency as the secondary criterion. |
+| `ServerStrategySelector` | Chooses the server selection policy. |
+| `ServerStrategySelector.Mode` | Names the built-in manual server policies. |
+| `ServerLoadSource` | Defines access to server utilization measurements. |
+| `SimulatedServerLoadSource` | Supplies utilization measurements from a fixed snapshot. |
+| `StrategyDemo` | Demonstrates interchangeable matchmaking policies through a complete match. |
+
+### Why Strategy, not State or Template Method
+
+This solution uses Strategy because each family represents interchangeable algorithms for
+the same operation. Player policies receive a `PlayerPool` and return an optional player;
+server policies receive a `ServerPool` and return an optional server. A caller can use any
+implementation through the same interface. Different results on identical input are expected:
+fairness by rating, queue waiting time and role compatibility are different matchmaking goals.
+Server latency, external utilization and regional preference similarly express different goals.
+
+Each context delegates work through composition. It neither knows concrete algorithm classes
+nor examines their types. The client can inject a policy directly, ask a selector to choose one,
+or replace the policy while retaining the same context and input. To add an algorithm,
+implement the family interface and pass the new object to the context. Existing strategies
+and contexts remain unchanged. Registering that algorithm as a new built-in manual choice,
+or assigning it an automatic rule, is a separate change in the selector. The tests inject
+previously unknown implementations to demonstrate this extension point.
+
+State also uses composition, but represents lifecycle-dependent behavior and transitions.
+Our policies do not describe lifecycle stages, own transitions, or replace themselves.
+The selector chooses a policy from the current situation, and the caller installs it.
+The existing `NEW`, `RESERVED` and `CANCELLED` party statuses belong to the earlier
+assignment's lifecycle model; they do not determine which matching algorithm object exists.
+
+Template Method puts a fixed algorithm skeleton in a superclass and allows subclasses to
+override selected steps. Here there is no shared algorithm superclass or inherited skeleton.
+Each strategy owns its selection logic, and runtime replacement changes behavior through an
+interface reference. Shared pool filtering only enforces domain constraints; it does not call
+subclass hooks. This keeps the independent algorithms small and allows their data dependencies,
+such as server utilization, to be replaced without modifying the contexts.
+
+### Before and after refactoring
+
+The player family was first committed with all three algorithms in one
+`ConditionalPlayerMatching.select()` switch. The next commit extracted the branches into
+three strategy classes and moved construction choices into the selector.
+The context API and **the entire `PlayerStrategyTest.java` file are identical** on both commits.
+All 42 tests present at that stage pass before and after the refactor.
+
+- [Before: conditional algorithms, `ebfded4`](https://github.com/AlmazCode/SDP-A4/commit/ebfded42276c855ed7cb6cb623ed048ae08d482e)
+- [After: extracted strategies, `bfb4c78`](https://github.com/AlmazCode/SDP-A4/commit/bfb4c782c1d61c1c203c66eb49e4489c6f464458)
+
+These are local commits. The links use the configured `origin` repository and become accessible
+on GitHub after the commits are pushed there.
+
+Inspect the refactoring locally:
+
+```sh
+git show ebfded4:src/main/java/matchmaking/strategy/player/ConditionalPlayerMatching.java
+git diff ebfded4 bfb4c78 -- src/main/java/matchmaking/strategy/player
+git diff ebfded4 bfb4c78 -- src/test/java/matchmaking/strategy/player/PlayerStrategyTest.java
+```
+
+The final command produces no output because the behavioral tests were not changed.
+To independently test either commit without modifying the current working directory:
+
+```sh
+snapshot=$(mktemp -d)
+git archive ebfded4 | tar -x -C "$snapshot"
+mvn -f "$snapshot/pom.xml" test
+# Repeat with bfb4c78 in a new temporary directory for the after version.
+```
+
+### Assignment 5 tests and defense
+
+```sh
+mvn clean verify
+```
+
+The complete suite has 62 tests: 27 existing tests plus 35 Assignment 5 cases.
+`PlayerStrategyTest` and `ServerStrategyTest` cover each algorithm, every selector rule,
+rule priority, boundary values, empty eligible pools, ties, input immutability and runtime switching.
+Both families have an `@ParameterizedTest` checking their common eligibility contract.
+Server tests cover fixed fake readings, changing readings, full servers and invalid measurements.
+`StrategyDemoTest` checks console output plus the saved match produced through the existing facade.
+JaCoCo enforces at least 80% line coverage per package.
+
+For live coding, add a class implementing either strategy interface and inject it through
+`setStrategy()`. Change automatic selection by editing a selector rule and its test.
+Swap the data source by passing another `ServerLoadSource` to `ServerStrategySelector`.
+
+## Assignment 4: Facade
 
 ## Run
 
@@ -101,7 +288,8 @@ Adapter changes an incompatible interface to fit the client's interface. For exa
 mvn test
 ```
 
-27 tests; 98.0% line coverage. The three subsystems and facades have 100% coverage. JaCoCo checks at least 80% per package. Report: `target/site/jacoco/index.html`.
+The original 27 tests remain in the suite. JaCoCo checks at least 80% line coverage per package.
+Report: `target/site/jacoco/index.html`.
 
 F.I.R.S.T.: local files keep tests fast; each test has its own `@TempDir`; inputs are fixed; JUnit checks the results; tests are committed with the code. `matchWith(...)` is the test helper for creating a match.
 
@@ -111,4 +299,4 @@ Tests cover both rollback depths, restarts, failed disk writes, input limits, en
 mvn -Djacoco.skip=true -Dtest=MatchmakingTest#eachSubsystemCanBeUsedWithoutAnyFacade test
 ```
 
-[Class diagram](docs/uml.svg). [Report](output/pdf/SDP_Assignment_4_Sabirzhanov_Emil.pdf).
+[Assignment 4 report](output/pdf/SDP_Assignment_4_Sabirzhanov_Emil.pdf).
