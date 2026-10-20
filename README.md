@@ -6,7 +6,7 @@ Assignment 5: Strategy, built on Assignment 4: Facade. Java 17+, Maven, JUnit 5,
 
 [PDF diagrams](output/pdf/SDP_Assignment_5_Sabirzhanov_Emil.pdf):
 assignment title, author, player matching UML, server selection UML, runtime selection
-sequence and links to the repository and refactoring commits.
+sequence and a link to the repository.
 
 Vector diagrams: [player matching](docs/strategy/player-matching.svg),
 [server selection](docs/strategy/server-selection.svg),

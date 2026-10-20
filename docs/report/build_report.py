@@ -176,8 +176,6 @@ story.append(Paragraph("GitHub Repository", heading))
 repo = "https://github.com/AlmazCode/SDP-A5"
 references = [
     (repo, repo),
-    (f"{repo}/commit/ebfded42276c855ed7cb6cb623ed048ae08d482e", "Before refactoring: ebfded4"),
-    (f"{repo}/commit/bfb4c782c1d61c1c203c66eb49e4489c6f464458", "After refactoring: bfb4c78"),
 ]
 for url, label in references:
     story.append(Paragraph(f'<link href="{url}" color="#235A8A"><u>{label}</u></link>', links))
@@ -202,8 +200,9 @@ assert len(reader.pages) == 2, f"Expected 2 pages; found {len(reader.pages)}"
 text = "\n".join(page.extract_text() for page in reader.pages)
 for required in ["PlayerMatchingStrategy", "ServerSelectionStrategy", "ServerLoadSource",
                  "setStrategy", "Runtime Selection Sequence Diagram", "Software Design Patterns",
-                 "Assignment 5", "Sabirzhanov Emil, SE-2533", repo, "ebfded4", "bfb4c78"]:
+                 "Assignment 5", "Sabirzhanov Emil, SE-2533", repo]:
     assert required in text, required
+assert "Before refactoring" not in text and "After refactoring" not in text
 actual_links = [
     ref.get_object().get("/A", {}).get("/URI")
     for page in reader.pages for ref in page.get("/Annots", [])
