@@ -32,6 +32,14 @@ pdfmetrics.registerFontFamily("Helvetica", normal="Helvetica", bold="Helvetica-B
 
 heading = ParagraphStyle("heading", fontName="Montserrat", fontSize=18, leading=23,
                          alignment=TA_CENTER, spaceAfter=18, textColor=INK)
+title = ParagraphStyle("title", fontName="Montserrat", fontSize=25, leading=31,
+                       alignment=TA_CENTER, spaceAfter=5, textColor=INK)
+subtitle = ParagraphStyle("subtitle", fontName="Montserrat", fontSize=15, leading=20,
+                          alignment=TA_CENTER, spaceAfter=5, textColor=GRAY)
+author = ParagraphStyle("author", fontName="Montserrat", fontSize=10.5, leading=15,
+                        alignment=TA_CENTER, spaceAfter=14, textColor=INK)
+links = ParagraphStyle("links", fontName="Helvetica", fontSize=10, leading=15,
+                       alignment=TA_CENTER, spaceAfter=8, textColor=INK)
 story = []
 
 
@@ -152,14 +160,27 @@ def diagram(d, name):
     story.extend([d, Spacer(1, 7)])
 
 
+story.append(Paragraph("Software Design Patterns", title))
+story.append(Paragraph("Assignment 5", subtitle))
+story.append(Paragraph("by Sabirzhanov Emil, SE-2533", author))
 story.append(Paragraph("Player Matching Class Diagram", heading))
 diagram(player_uml(), "player-matching")
-story.append(Spacer(1, 28))
+story.append(Spacer(1, 18))
 story.append(Paragraph("Runtime Selection Sequence Diagram", heading))
 diagram(runtime_sequence(), "runtime-selection")
 story.append(PageBreak())
 story.append(Paragraph("Server Selection Class Diagram", heading))
 diagram(server_uml(), "server-selection")
+story.append(Spacer(1, 24))
+story.append(Paragraph("GitHub Repository", heading))
+repo = "https://github.com/AlmazCode/SDP-A5"
+references = [
+    (repo, repo),
+    (f"{repo}/commit/ebfded42276c855ed7cb6cb623ed048ae08d482e", "Before refactoring: ebfded4"),
+    (f"{repo}/commit/bfb4c782c1d61c1c203c66eb49e4489c6f464458", "After refactoring: bfb4c78"),
+]
+for url, label in references:
+    story.append(Paragraph(f'<link href="{url}" color="#235A8A"><u>{label}</u></link>', links))
 
 
 def footer(canvas, doc):
@@ -172,7 +193,7 @@ def footer(canvas, doc):
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
 doc = SimpleDocTemplate(str(OUT), pagesize=A4, leftMargin=72, rightMargin=72,
-                        topMargin=72, bottomMargin=72,
+                        topMargin=52, bottomMargin=52,
                         title="Assignment 5 - Strategy UML Diagrams",
                         author="Sabirzhanov Emil", subject="Video game matchmaking with two Strategy families")
 doc.build(story, onFirstPage=footer, onLaterPages=footer)
@@ -180,6 +201,12 @@ reader = PdfReader(OUT)
 assert len(reader.pages) == 2, f"Expected 2 pages; found {len(reader.pages)}"
 text = "\n".join(page.extract_text() for page in reader.pages)
 for required in ["PlayerMatchingStrategy", "ServerSelectionStrategy", "ServerLoadSource",
-                 "setStrategy", "Runtime Selection Sequence Diagram"]:
+                 "setStrategy", "Runtime Selection Sequence Diagram", "Software Design Patterns",
+                 "Assignment 5", "Sabirzhanov Emil, SE-2533", repo, "ebfded4", "bfb4c78"]:
     assert required in text, required
+actual_links = [
+    ref.get_object().get("/A", {}).get("/URI")
+    for page in reader.pages for ref in page.get("/Annots", [])
+]
+assert set(actual_links) == {url for url, _ in references}
 print(f"Created {OUT} ({len(reader.pages)} pages)")
