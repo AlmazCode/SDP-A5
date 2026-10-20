@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="451.27559055118115" height="285" preserveAspectRatio="xMinYMin meet" viewBox="0 0 451 285" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="451.27559055118115" height="285"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-285)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="204" width="190" height="69" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="0" y="250" width="190" height="23" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(94%,95%,96%); fill-rule: evenodd;"/>
+			<rect x="0" y="204" width="190" height="69" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: none; fill-rule: evenodd;"/>
+			<text x="49.009179687499994" y="258" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,516) scale(1,-1)">PlayerStrategySelector</text>
+			<path d="M 0,250 L 190,250 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="5" y="237" style="font-family: Helvetica; font-size: 8.4px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,474) scale(1,-1)">+ manual(mode): strategy</text>
+			<text x="5" y="226" style="font-family: Helvetica; font-size: 8.4px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,452) scale(1,-1)">+ automatic(ranked, wait, team)</text>
+			<rect x="230" y="182" width="221.27559055118115" height="91" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="230" y="250" width="221.27559055118115" height="23" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(94%,95%,96%); fill-rule: evenodd;"/>
+			<rect x="230" y="182" width="221.27559055118115" height="91" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: none; fill-rule: evenodd;"/>
+			<text x="293.9620140255906" y="258" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,516) scale(1,-1)">PlayerMatchingContext</text>
+			<path d="M 230,250 L 451.275591,250 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="235" y="237" style="font-family: Helvetica; font-size: 8.4px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,474) scale(1,-1)">- strategy: PlayerMatchingStrategy</text>
+			<text x="235" y="226" style="font-family: Helvetica; font-size: 8.4px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,452) scale(1,-1)">+ PlayerMatchingContext(strategy)</text>
+			<text x="235" y="215" style="font-family: Helvetica; font-size: 8.4px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,430) scale(1,-1)">+ setStrategy(strategy): void</text>
+			<text x="235" y="204" style="font-family: Helvetica; font-size: 8.4px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,408) scale(1,-1)">+ select(pool): Optional&lt;Player&gt;</text>
+			<rect x="100" y="92" width="251" height="59" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="100" y="116" width="251" height="35" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(94%,95%,96%); fill-rule: evenodd;"/>
+			<rect x="100" y="92" width="251" height="59" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: none; fill-rule: evenodd;"/>
+			<text x="201.7401611328125" y="139" style="font-family: Helvetica; font-size: 7.7px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,278) scale(1,-1)">&lt;&lt;interface&gt;&gt;</text>
+			<text x="177.651171875" y="125" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,250) scale(1,-1)">PlayerMatchingStrategy</text>
+			<path d="M 100,116 L 351,116 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="105" y="103" style="font-family: Helvetica; font-size: 8.4px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,206) scale(1,-1)">+ select(pool: PlayerPool): Optional&lt;Player&gt;</text>
+			<polyline points="95 204, 95 167, 145 167, 145 151" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polyline points="147.5 156, 145 151, 142.5 156" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<text x="6" y="178" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,356) scale(1,-1)">creates a concrete policy</text>
+			<polyline points="341 182, 341 167, 300 167, 300 151" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<polyline points="302.5 156, 300 151, 297.5 156" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<text x="349" y="163" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,326) scale(1,-1)">holds 1</text>
+			<rect x="0" y="9" width="143" height="48" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="0" y="34" width="143" height="23" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(94%,95%,96%); fill-rule: evenodd;"/>
+			<rect x="0" y="9" width="143" height="48" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: none; fill-rule: evenodd;"/>
+			<text x="33.240551757812504" y="42" style="font-family: Helvetica-Bold; font-size: 8.1px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,84) scale(1,-1)">SkillBasedMatching</text>
+			<path d="M 0,34 L 143,34 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="5" y="21" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,42) scale(1,-1)">+ select(pool)</text>
+			<polyline points="71.5 57, 71.5 74, 151 74, 151 92" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="151 92, 147.5 85, 154.5 85" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="154" y="9" width="143" height="48" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="154" y="34" width="143" height="23" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(94%,95%,96%); fill-rule: evenodd;"/>
+			<rect x="154" y="9" width="143" height="48" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: none; fill-rule: evenodd;"/>
+			<text x="177.354833984375" y="42" style="font-family: Helvetica-Bold; font-size: 8.1px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,84) scale(1,-1)">LongestWaitingMatching</text>
+			<path d="M 154,34 L 297,34 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="159" y="21" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,42) scale(1,-1)">+ select(pool)</text>
+			<polyline points="225.5 57, 225.5 74, 226 74, 226 92" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="226 92, 222.5 85, 229.5 85" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="308" y="9" width="143" height="48" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="308" y="34" width="143" height="23" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(94%,95%,96%); fill-rule: evenodd;"/>
+			<rect x="308" y="9" width="143" height="48" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: none; fill-rule: evenodd;"/>
+			<text x="322.3412109375" y="42" style="font-family: Helvetica-Bold; font-size: 8.1px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,84) scale(1,-1)">ComplementaryRoleMatching</text>
+			<path d="M 308,34 L 451,34 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="313" y="21" style="font-family: Helvetica; font-size: 8.1px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,42) scale(1,-1)">+ select(pool)</text>
+			<polyline points="379.5 57, 379.5 74, 301 74, 301 92" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="301 92, 297.5 85, 304.5 85" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+		</g>
+	</g>
+</svg>

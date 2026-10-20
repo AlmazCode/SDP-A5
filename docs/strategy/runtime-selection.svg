@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="451.27559055118115" height="188" preserveAspectRatio="xMinYMin meet" viewBox="0 0 451 188" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="451.27559055118115" height="188"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-188)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="15.916430664062501" y="177" style="font-family: Helvetica-Bold; font-size: 8.7px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,354) scale(1,-1)">Client</text>
+			<path d="M 28,6 L 28,167 Z" style="stroke: rgb(36%,38%,40%); stroke-linecap: butt; stroke-width: 0.5; stroke-dasharray: 3, 3;"/>
+			<text x="135.833642578125" y="177" style="font-family: Helvetica-Bold; font-size: 8.7px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,354) scale(1,-1)">Selector</text>
+			<path d="M 153,6 L 153,167 Z" style="stroke: rgb(36%,38%,40%); stroke-linecap: butt; stroke-width: 0.5; stroke-dasharray: 3, 3;"/>
+			<text x="270.8085693359375" y="177" style="font-family: Helvetica-Bold; font-size: 8.7px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,354) scale(1,-1)">Context</text>
+			<path d="M 287,6 L 287,167 Z" style="stroke: rgb(36%,38%,40%); stroke-linecap: butt; stroke-width: 0.5; stroke-dasharray: 3, 3;"/>
+			<text x="404.5936279296875" y="177" style="font-family: Helvetica-Bold; font-size: 8.7px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,354) scale(1,-1)">Strategy</text>
+			<path d="M 422,6 L 422,167 Z" style="stroke: rgb(36%,38%,40%); stroke-linecap: butt; stroke-width: 0.5; stroke-dasharray: 3, 3;"/>
+			<polyline points="28 150, 153 150" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<polyline points="148 152.5, 153 150, 148 147.5" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<text x="55.595703125" y="154" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,308) scale(1,-1)">automatic(situation)</text>
+			<polyline points="153 128, 28 128" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polyline points="33 125.5, 28 128, 33 130.5" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<text x="62.26171875" y="132" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,264) scale(1,-1)">chosen strategy</text>
+			<polyline points="28 106, 287 106" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<polyline points="282 108.5, 287 106, 282 103.5" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<text x="121.705078125" y="110" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,220) scale(1,-1)">setStrategy(chosen)</text>
+			<polyline points="28 84, 287 84" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<polyline points="282 86.5, 287 84, 282 81.5" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<text x="124.8203125" y="88" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,176) scale(1,-1)">select(same input)</text>
+			<polyline points="287 62, 422 62" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<polyline points="417 64.5, 422 62, 417 59.5" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<text x="332.712890625" y="66" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,132) scale(1,-1)">select(input)</text>
+			<polyline points="422 40, 287 40" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polyline points="292 37.5, 287 40, 292 42.5" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<text x="337.15234375" y="44" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,88) scale(1,-1)">candidate</text>
+			<polyline points="287 18, 28 18" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polyline points="33 15.5, 28 18, 33 20.5" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<text x="124.142578125" y="22" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,44) scale(1,-1)">selected candidate</text>
+		</g>
+	</g>
+</svg>

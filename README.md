@@ -2,6 +2,20 @@
 
 Assignment 5: Strategy, built on Assignment 4: Facade. Java 17+, Maven, JUnit 5, CSV files.
 
+## Assignment 5 report
+
+[PDF report](output/pdf/SDP_Assignment_5_Sabirzhanov_Emil.pdf):
+two strategy UML diagrams, runtime selection, design rationale, test evidence,
+refactoring commits and class responsibilities.
+
+Vector diagrams: [player matching](docs/strategy/player-matching.svg),
+[server selection](docs/strategy/server-selection.svg),
+[runtime selection](docs/strategy/runtime-selection.svg).
+
+To rebuild the report, run `mvn clean verify`, then
+`python3 docs/report/build_report.py` with Python packages `reportlab` and `pypdf` installed.
+The generator uses bundled fonts with their licenses in `docs/report/`.
+
 ## Assignment 5: run
 
 ```sh

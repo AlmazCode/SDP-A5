@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="451.27559055118115" height="376" preserveAspectRatio="xMinYMin meet" viewBox="0 0 451 376" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="451.27559055118115" height="376"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-376)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="296" width="190" height="70" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="0" y="343" width="190" height="23" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(94%,95%,96%); fill-rule: evenodd;"/>
+			<rect x="0" y="296" width="190" height="70" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: none; fill-rule: evenodd;"/>
+			<text x="48.54160156249999" y="351" style="font-family: Helvetica-Bold; font-size: 8.4px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,702) scale(1,-1)">ServerStrategySelector</text>
+			<path d="M 0,343 L 190,343 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="5" y="330" style="font-family: Helvetica; font-size: 8.4px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,660) scale(1,-1)">- loads: ServerLoadSource</text>
+			<text x="5" y="319" style="font-family: Helvetica; font-size: 8.4px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,638) scale(1,-1)">+ manual(mode) / automatic(...)</text>
+			<rect x="230" y="274" width="221.27559055118115" height="92" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="230" y="343" width="221.27559055118115" height="23" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(94%,95%,96%); fill-rule: evenodd;"/>
+			<rect x="230" y="274" width="221.27559055118115" height="92" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: none; fill-rule: evenodd;"/>
+			<text x="295.5108421505906" y="351" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,702) scale(1,-1)">ServerSelectionContext</text>
+			<path d="M 230,343 L 451.275591,343 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="235" y="330" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,660) scale(1,-1)">- strategy: ServerSelectionStrategy</text>
+			<text x="235" y="319" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,638) scale(1,-1)">+ ServerSelectionContext(strategy)</text>
+			<text x="235" y="308" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,616) scale(1,-1)">+ setStrategy(strategy): void</text>
+			<text x="235" y="297" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,594) scale(1,-1)">+ select(pool): Optional&lt;ServerCandidate&gt;</text>
+			<rect x="88" y="189" width="275" height="59" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="88" y="213" width="275" height="35" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(94%,95%,96%); fill-rule: evenodd;"/>
+			<rect x="88" y="189" width="275" height="59" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: none; fill-rule: evenodd;"/>
+			<text x="201.7401611328125" y="236" style="font-family: Helvetica; font-size: 7.7px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,472) scale(1,-1)">&lt;&lt;interface&gt;&gt;</text>
+			<text x="179.255859375" y="222" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,444) scale(1,-1)">ServerSelectionStrategy</text>
+			<path d="M 88,213 L 363,213 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="93" y="200" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,400) scale(1,-1)">+ select(pool: ServerPool): Optional&lt;ServerCandidate&gt;</text>
+			<polyline points="95 296, 95 266, 140 266, 140 248" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polyline points="142.5 253, 140 248, 137.5 253" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<text x="5" y="277" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,554) scale(1,-1)">creates a concrete policy</text>
+			<polyline points="341 274, 341 261, 310 261, 310 248" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<polyline points="312.5 253, 310 248, 307.5 253" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<text x="350" y="258" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,516) scale(1,-1)">holds 1</text>
+			<rect x="0" y="93" width="143" height="59" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="0" y="129" width="143" height="23" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(94%,95%,96%); fill-rule: evenodd;"/>
+			<rect x="0" y="93" width="143" height="59" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: none; fill-rule: evenodd;"/>
+			<text x="35.9296875" y="137" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,274) scale(1,-1)">LowLatencyServer</text>
+			<path d="M 0,129 L 143,129 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="5" y="116" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,232) scale(1,-1)">+ select(pool)</text>
+			<polyline points="71.5 152, 71.5 169, 151 169, 151 189" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="151 189, 147.5 182, 154.5 182" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="154" y="93" width="143" height="59" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="154" y="129" width="143" height="23" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(94%,95%,96%); fill-rule: evenodd;"/>
+			<rect x="154" y="93" width="143" height="59" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: none; fill-rule: evenodd;"/>
+			<text x="188.373046875" y="137" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,274) scale(1,-1)">LeastLoadedServer</text>
+			<path d="M 154,129 L 297,129 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="159" y="116" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,232) scale(1,-1)">- loads: ServerLoadSource</text>
+			<text x="159" y="105" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,210) scale(1,-1)">+ select(pool)</text>
+			<polyline points="225.5 152, 225.5 169, 226 169, 226 189" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="226 189, 222.5 182, 229.5 182" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="308" y="93" width="143" height="59" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="308" y="129" width="143" height="23" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(94%,95%,96%); fill-rule: evenodd;"/>
+			<rect x="308" y="93" width="143" height="59" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: none; fill-rule: evenodd;"/>
+			<text x="350.154296875" y="137" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,274) scale(1,-1)">RegionalServer</text>
+			<path d="M 308,129 L 451,129 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="313" y="116" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,232) scale(1,-1)">+ select(pool)</text>
+			<polyline points="379.5 152, 379.5 169, 301 169, 301 189" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="301 189, 297.5 182, 304.5 182" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="0" y="0" width="226" height="59" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="0" y="24" width="226" height="35" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(94%,95%,96%); fill-rule: evenodd;"/>
+			<rect x="0" y="0" width="226" height="59" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: none; fill-rule: evenodd;"/>
+			<text x="89.2401611328125" y="47" style="font-family: Helvetica; font-size: 7.7px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,94) scale(1,-1)">&lt;&lt;interface&gt;&gt;</text>
+			<text x="77.4296875" y="33" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,66) scale(1,-1)">ServerLoadSource</text>
+			<path d="M 0,24 L 226,24 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="5" y="11" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,22) scale(1,-1)">+ utilizationPercent(serverId: String): int</text>
+			<rect x="260" y="0" width="191.27559055118115" height="59" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="260" y="36" width="191.27559055118115" height="23" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(94%,95%,96%); fill-rule: evenodd;"/>
+			<rect x="260" y="0" width="191.27559055118115" height="59" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: none; fill-rule: evenodd;"/>
+			<text x="300.9522484005906" y="44" style="font-family: Helvetica-Bold; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,88) scale(1,-1)">SimulatedServerLoadSource</text>
+			<path d="M 260,36 L 451.275591,36 Z" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="265" y="23" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,46) scale(1,-1)">- loads: Map&lt;String, Integer&gt;</text>
+			<text x="265" y="12" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,24) scale(1,-1)">+ utilizationPercent(serverId): int</text>
+			<polyline points="225 93, 225 76, 145 76, 145 59" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<polyline points="147.5 64, 145 59, 142.5 64" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd;"/>
+			<text x="6" y="72" style="font-family: Helvetica; font-size: 8px;fill: rgb(12%,14%,16%); stroke:none;" transform="translate(0,144) scale(1,-1)">injected data source</text>
+			<polyline points="260 29, 226 29" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: None; fill-rule: evenodd; stroke-dasharray: 3, 2;"/>
+			<polygon points="226 29, 233 25.5, 233 32.5" style="stroke: rgb(12%,14%,16%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+		</g>
+	</g>
+</svg>
